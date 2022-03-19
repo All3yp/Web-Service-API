@@ -22,9 +22,9 @@ struct ResultModel: Codable {
 	let collectionName, trackName, collectionCensoredName, trackCensoredName: String
 	let artistViewURL, collectionViewURL, trackViewURL: String
 	let previewURL: String
-	let artworkUrl30, artworkUrl60, artworkUrl100: String
+	let artworkUrl100: String
 	let collectionPrice, trackPrice: Double
-	let releaseDate: Date
+	let releaseDate: String
 	let collectionExplicitness, trackExplicitness: Explicitness
 	let discCount, discNumber, trackCount, trackNumber: Int
 	let trackTimeMillis: Int
@@ -46,7 +46,7 @@ struct ResultModel: Codable {
 		case collectionViewURL = "collectionViewUrl"
 		case trackViewURL = "trackViewUrl"
 		case previewURL = "previewUrl"
-		case artworkUrl30, artworkUrl60, artworkUrl100, collectionPrice, trackPrice, releaseDate, collectionExplicitness, trackExplicitness, discCount, discNumber, trackCount, trackNumber, trackTimeMillis, country, currency, primaryGenreName, contentAdvisoryRating, isStreamable
+		case artworkUrl100, collectionPrice, trackPrice, releaseDate, collectionExplicitness, trackExplicitness, discCount, discNumber, trackCount, trackNumber, trackTimeMillis, country, currency, primaryGenreName, contentAdvisoryRating, isStreamable
 		case collectionArtistID = "collectionArtistId"
 		case collectionArtistName
 	}
