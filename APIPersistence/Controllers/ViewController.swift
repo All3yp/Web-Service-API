@@ -9,23 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
+	@IBOutlet weak var responseTextView: UITextView!
+	@IBAction func resultButton(_ sender: UIButton) {
 		debug()
 	}
 
-	// MARK: DEBUG
+	// MARK: You can use this example for fetching Albuns and get the model on the views
+
 	func debug() {
 
 		let api = GetMusicService()
 
-		api.fetchAlbuns({ result in
-			result?.results.forEach({ resultModel in
-				print(resultModel.artistID)
-				print(resultModel.artistName)
-			})
-		})
+		api.fetchAlbuns { [weak self] result in
+			DispatchQueue.main.async {
+				self?.responseTextView.text = result!.results.description
+			}
+		}
 	}
 }
-
